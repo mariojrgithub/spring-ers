@@ -21,13 +21,13 @@ public class EmployeeController {
 	@Autowired
 	EmployeeService employeeService;
 	
-	// http://localhost:8080/api/manager/all-employees
+	// http://localhost:4444/api/manager/all-employees
 	@GetMapping("manager/all-employees")
 	List<EmployeePojo> fetchAllEmployees() throws SystemException {
 		return employeeService.fetchAllEmployees();
 	}
 	
-	// http:localhost:8080/api/associate/requests/add
+	// http:localhost:4444/api/associate/requests/add
 	@PostMapping("associate/requests/add")
 	RequestPojo createNewRequest(@RequestBody RequestPojo requestPojo) throws SystemException {
 		return employeeService.createNewRequest(requestPojo);

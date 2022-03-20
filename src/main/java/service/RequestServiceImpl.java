@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import dao.EmployeeDao;
 import dao.RequestDao;
@@ -13,6 +14,7 @@ import exceptions.SystemException;
 import pojo.EmployeePojo;
 import pojo.RequestPojo;
 
+@Service
 public class RequestServiceImpl implements RequestService {
 	
 	@Autowired
@@ -20,6 +22,13 @@ public class RequestServiceImpl implements RequestService {
 	
 	@Autowired 
 	RequestDao requestDao;
+	
+	
+
+	public RequestServiceImpl() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public List<RequestPojo> fetchAllRequests() throws SystemException {

@@ -24,6 +24,13 @@ public class EmployeeServiceImpl implements EmployeeService {
 	
 	@Autowired
 	RequestDao requestDao;
+	
+	
+
+	public EmployeeServiceImpl() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public EmployeePojo fetchOneEmployee(String employeeEmail) throws SystemException {

@@ -27,7 +27,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public EmployeePojo fetchOneEmployee(String employeeEmail) throws SystemException {
-		Optional<EmployeeEntity> optional = employeeDao.findByEmail(employeeEmail);
+		Optional<EmployeeEntity> optional = employeeDao.findByEmployeeEmail(employeeEmail);
 		EmployeePojo employeePojo = null;
 		if(optional.isPresent()) {
 			EmployeeEntity employeeEntity = optional.get();
@@ -52,7 +52,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public EmployeePojo loginEmployee(EmployeePojo employeePojo) throws SystemException {
-		Optional<EmployeeEntity> optional = employeeDao.loginEmployee(employeePojo);
+		Optional<EmployeeEntity> optional = employeeDao.findEmployee(employeePojo);
 		EmployeePojo employeePojo2 = null;
 		if(optional.isPresent()) {
 			EmployeeEntity employeeEntity = optional.get();
